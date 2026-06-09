@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dr. Sonntag — Homepage Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#0e2741;--navy-d:#0a1c2f;--gold:#c2a04e;--gold-soft:#d9c389;
+    --paper:#f6f3ec;--mut:#5d6b78;--line:rgba(14,39,65,.12);
+    --serif:"Newsreader",Georgia,serif;--sans:"Mulish",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);background:var(--paper);color:#16202b;-webkit-font-smoothing:antialiased}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+  .top{background:var(--navy-d);color:#cdd9e4;text-align:center;padding:11px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase}
+  .top b{color:var(--gold-soft)}
+  header{padding:64px 0 30px;text-align:center}
+  .mk{width:52px;height:52px;border:1.5px solid var(--navy);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-weight:600;font-size:21px;color:var(--navy);margin:0 auto 22px;position:relative}
+  .mk::after{content:"";position:absolute;inset:5px;border-radius:50%;border:1px solid var(--gold)}
+  .eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+  header h1{font-family:var(--serif);font-weight:500;font-size:clamp(34px,4.6vw,58px);color:var(--navy);margin:14px 0 16px;line-height:1.05;letter-spacing:-.01em}
+  header p{color:var(--mut);font-size:18px;max-width:34em;margin:0 auto}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding:40px 0 80px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;transition:.3s;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -34px rgba(14,39,65,.5)}
+  .thumb{height:230px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .badge{position:absolute;top:16px;left:16px;z-index:3;background:rgba(255,255,255,.92);color:var(--navy);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:7px 13px;border-radius:30px}
+  /* thumb 1 - authority */
+  .t1{background:var(--paper);display:flex;align-items:center;padding:0 26px;gap:18px}
+  .t1 .h{font-family:var(--serif);font-size:30px;color:var(--navy);line-height:1.05}
+  .t1 .h em{font-style:italic;color:var(--gold)}
+  .t1 .ph{flex:none;width:96px;height:130px;background:var(--navy);border-radius:3px;position:relative}
+  .t1 .ph::after{content:"";position:absolute;inset:-8px -8px 14px 14px;border:1px solid var(--gold);z-index:-1}
+  .t1 .ph img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(.2);border-radius:3px}
+  /* thumb 2 - in motion */
+  .t2{background:radial-gradient(120% 120% at 80% 0,#173451,#0b1f33);display:flex;align-items:center;padding:0 26px;position:relative;overflow:hidden}
+  .t2::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:30px 30px}
+  .t2 .h{font-family:"Mulish";font-weight:900;font-size:30px;color:#fff;text-transform:uppercase;line-height:.9;letter-spacing:-.02em;position:relative;z-index:2}
+  .t2 .h .o{-webkit-text-stroke:1.5px var(--gold);color:transparent;display:block}
+  .t2 .ph{position:absolute;right:18px;bottom:0;width:108px;height:150px;border-radius:6px 6px 0 0;overflow:hidden;z-index:1;border:1px solid rgba(255,255,255,.12)}
+  .t2 .ph img{width:100%;height:100%;object-fit:cover;object-position:center top;mix-blend-mode:luminosity;opacity:.9}
+  /* thumb 3 - trusted */
+  .t3{background:#eaf2f7;display:flex;align-items:center;padding:0 26px;gap:18px}
+  .t3 .h{font-family:"Mulish";font-weight:800;font-size:26px;color:#163a5f;line-height:1.08;letter-spacing:-.02em}
+  .t3 .h .u{background:#f7e9cb;border-radius:5px;padding:0 4px}
+  .t3 .ph{flex:none;width:120px;height:120px;background:#163a5f;border-radius:46% 54% 48% 52%/52% 48% 52% 48%;padding:8px}
+  .t3 .ph img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:42% 50% 44% 48%/48% 44% 48% 44%}
+  .body{padding:28px 28px 30px;flex:1;display:flex;flex-direction:column}
+  .body h2{font-family:var(--serif);font-weight:500;font-size:25px;color:var(--navy);margin-bottom:8px}
+  .body p{color:var(--mut);font-size:14.5px;line-height:1.55;flex:1}
+  .meta{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0 22px}
+  .meta span{font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--navy);background:var(--paper);border:1px solid var(--line);padding:5px 10px;border-radius:30px}
+  .open{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--navy);color:#fff;font-weight:700;font-size:14px;padding:13px 22px;border-radius:3px;transition:.2s}
+  .open:hover{background:var(--gold);color:var(--navy-d)}
+  .note{text-align:center;color:var(--mut);font-size:13.5px;padding:0 0 70px;max-width:46em;margin:0 auto;line-height:1.6}
+  @media(max-width:920px){.grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}.wrap{padding:0 24px}}
+</style>
+</head>
+<body>
+  <div class="top">Concept Review · <b>Dr. Jeffrey R. Sonntag, DO</b> · Three Homepage Directions</div>
+  <header>
+    <div class="wrap">
+      <div class="mk">JS</div>
+      <div class="eyebrow">Personal Brand · Homepage</div>
+      <h1>Three directions to choose from.</h1>
+      <p>Each is a complete, scrollable homepage built on a modernized OSMC navy &amp; gold palette. Open any one to explore it full-size, then tell me which direction to refine.</p>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="grid">
+      <!-- 1 -->
+      <a class="card" href="Sonntag - 1 Authority.html">
+        <div class="thumb t1">
+          <span class="badge">01 · Authority</span>
+          <div class="h">Restoring motion, rebuilding <em>confidence.</em></div>
+          <div class="ph"><img src="assets/sonntag-headshot.png" alt="" /></div>
+        </div>
+        <div class="body">
+          <h2>Authority</h2>
+          <p>Premium, editorial, and calm — a concierge private-practice feel. Serif headlines, generous whitespace, and quiet confidence aimed at credibility above all.</p>
+          <div class="meta"><span>Editorial serif</span><span>Whitespace</span><span>Premium</span></div>
+          <span class="open">Open Concept 01 →</span>
+        </div>
+      </a>
+      <!-- 2 -->
+      <a class="card" href="Sonntag - 2 In Motion.html">
+        <div class="thumb t2">
+          <span class="badge">02 · In Motion</span>
+          <div class="h">Built to move.<span class="o">Built back.</span></div>
+          <div class="ph"><img src="assets/sonntag-headshot.png" alt="" /></div>
+        </div>
+        <div class="body">
+          <h2>In Motion</h2>
+          <p>Athletic and energetic — a sports-performance feel that leans into the OSMC recovery angle. Bold condensed type, a dark hero, and momentum-driven stats.</p>
+          <div class="meta"><span>Bold &amp; dark</span><span>Sports energy</span><span>Stats</span></div>
+          <span class="open">Open Concept 02 →</span>
+        </div>
+      </a>
+      <!-- 3 -->
+      <a class="card" href="Sonntag - 3 Trusted Care.html">
+        <div class="thumb t3">
+          <span class="badge">03 · Trusted Care</span>
+          <div class="h">Expert care, <span class="u">close to home.</span></div>
+          <div class="ph"><img src="assets/sonntag-headshot.png" alt="" /></div>
+        </div>
+        <div class="body">
+          <h2>Trusted Care</h2>
+          <p>Warm, human, and approachable — patient-first and reassuring. Soft neutrals, rounded cards, and friendly clarity that lowers the barrier to booking.</p>
+          <div class="meta"><span>Warm neutrals</span><span>Friendly</span><span>Patient-first</span></div>
+          <span class="open">Open Concept 03 →</span>
+        </div>
+      </a>
+    </div>
+    <p class="note">All copy, stats, and credentials marked with an asterisk (*) are realistic placeholders — confirm fellowships, locations, and figures before launch. The headshot is the photo you provided; we can add clinic, action, or recovery imagery wherever you have it.</p>
+  </div>
+</body>
+</html>
