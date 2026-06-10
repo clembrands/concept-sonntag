@@ -41,28 +41,6 @@
   a    { color: inherit; text-decoration: none; }
   .wrap { max-width: 1240px; margin: 0 auto; padding: 0 48px; }
 
-  /* ── EYEBROW ── */
-  .eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 11.5px;
-    font-weight: 700;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-    color: var(--gold-d);
-  }
-  .eyebrow::before {
-    content: "";
-    width: 22px;
-    height: 1.5px;
-    background: var(--gold);
-    flex: none;
-    display: block;
-  }
-  .eyebrow-light { color: var(--gold-l); }
-  .eyebrow-light::before { background: var(--gold-l); }
-
   /* ── BUTTONS ── */
   .btn {
     display: inline-flex;
@@ -71,7 +49,7 @@
     font-family: var(--sans);
     font-weight: 700;
     font-size: 14.5px;
-    padding: 14px 26px;
+    padding: 15px 28px;
     border-radius: 40px;
     transition: all .2s ease;
     white-space: nowrap;
@@ -82,10 +60,20 @@
   .btn-gold:hover { background: var(--gold-d); color: #fff; }
   .btn-navy    { background: var(--navy);  color: #fff; }
   .btn-navy:hover { background: var(--navy-d); }
-  .btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--border); }
-  .btn-outline:hover { border-color: var(--gold); color: var(--gold-d); }
   .btn-ghost   { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.3); }
   .btn-ghost:hover { border-color: var(--gold-l); color: var(--gold-l); }
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-weight: 700;
+    font-size: 14.5px;
+    color: var(--navy);
+    border-bottom: 1.5px solid var(--gold);
+    padding-bottom: 2px;
+    transition: color .2s;
+  }
+  .text-link:hover { color: var(--gold-d); }
 
   /* ── HEADER ── */
   header {
@@ -141,28 +129,23 @@
   .nav-phone { font-weight: 700; font-size: 14px; color: #fff; }
 
   /* ── HERO ── */
-  .hero { padding: 88px 0 108px; }
+  .hero { padding: 96px 0 110px; }
   .hero-grid {
     display: grid;
     grid-template-columns: 1.1fr .9fr;
     gap: 80px;
     align-items: center;
   }
-
-  /* pulsing "welcoming patients" badge */
   .hero-badge {
     display: inline-flex;
     align-items: center;
     gap: 9px;
-    background: var(--gold-t);
-    border: 1px solid rgba(196,154,60,.3);
     color: var(--gold-d);
-    font-size: 12.5px;
+    font-size: 12px;
     font-weight: 700;
-    letter-spacing: .05em;
-    padding: 8px 16px;
-    border-radius: 40px;
-    margin-bottom: 28px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 30px;
   }
   .hero-badge-dot {
     width: 7px;
@@ -178,15 +161,14 @@
   }
   @media (prefers-reduced-motion:reduce) { .hero-badge-dot { animation:none; } }
 
-  /* headline: Cormorant display, italic "close to home." is the signature */
   .hero-title {
     font-family: var(--serif);
     font-weight: 600;
-    font-size: clamp(46px, 6.2vw, 88px);
+    font-size: clamp(48px, 6.4vw, 92px);
     color: var(--navy);
-    line-height: 1.0;
+    line-height: .98;
     letter-spacing: -.025em;
-    margin-bottom: 28px;
+    margin-bottom: 30px;
   }
   .hero-title .hl {
     font-style: italic;
@@ -204,41 +186,28 @@
     border-radius: 2px;
     z-index: -1;
   }
-
   .hero-body {
-    font-size: 18.5px;
-    color: var(--muted);
-    max-width: 32em;
-    line-height: 1.65;
-    margin-bottom: 36px;
-  }
-  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-
-  .hero-divider {
-    width: 44px;
-    height: 1.5px;
-    background: var(--border);
-    margin: 44px 0;
-  }
-  .hero-stats { display: flex; gap: 36px; flex-wrap: wrap; }
-  .stat-val {
-    font-weight: 800;
     font-size: 19px;
-    color: var(--navy);
-    line-height: 1;
-  }
-  .stat-lbl {
-    font-size: 13px;
     color: var(--muted);
-    margin-top: 4px;
+    max-width: 26em;
+    line-height: 1.6;
+    margin-bottom: 38px;
   }
+  .hero-actions { display: flex; gap: 26px; flex-wrap: wrap; align-items: center; }
+  .hero-quiet {
+    margin-top: 40px;
+    font-size: 13.5px;
+    color: var(--muted);
+    letter-spacing: .01em;
+  }
+  .hero-quiet span { color: var(--gold-d); margin: 0 10px; }
 
-  /* PHOTO: gold corner-frame is the signature element */
+  /* PHOTO: gold corner-frame signature */
   .hero-photo { position: relative; }
   .photo-frame {
     position: relative;
     display: block;
-    margin: 14px; /* room for corners to breathe */
+    margin: 14px;
   }
   .photo-frame::before {
     content: "";
@@ -274,110 +243,110 @@
     filter: grayscale(.06);
   }
 
-  /* ── CREDENTIAL BAR ── */
+  /* ── AFFILIATION BAR: centered placeholder logos ── */
   .cred-bar {
     background: var(--paper);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
+    padding: 30px 0;
   }
-  .cred-bar .wrap {
+  .cred-row {
     display: flex;
     align-items: center;
-    height: 76px;
-    gap: 28px;
+    justify-content: center;
+    gap: 72px;
     flex-wrap: wrap;
   }
-  .cred-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--muted);
-    flex: none;
-  }
-  .cred-sep { width: 1px; height: 18px; background: var(--border); flex: none; }
-  .cred-list { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
-  .cred-item {
-    font-weight: 700;
-    font-size: 15px;
-    color: var(--navy);
-    opacity: .5;
-    letter-spacing: .02em;
-    transition: opacity .2s;
-  }
-  .cred-item:hover { opacity: .9; }
+  .cred-logo { opacity: .45; transition: opacity .25s; }
+  .cred-logo:hover { opacity: .85; }
+  .cred-logo svg { display: block; height: 34px; width: auto; }
 
-  /* ── SECTION BASE ── */
-  .section { padding: 104px 0; }
-  .section-head {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto 64px;
+  /* ── STORY CHAPTER: empathy statement ── */
+  .story {
+    padding: 130px 0 120px;
   }
-  .section-head h2 {
+  .story-inner {
+    max-width: 880px;
+  }
+  .story-lead {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(32px, 4.4vw, 58px);
+    line-height: 1.14;
+    letter-spacing: -.02em;
+    color: var(--navy);
+  }
+  .story-lead em {
+    font-style: italic;
+    color: var(--gold-d);
+  }
+  .story-follow {
+    margin-top: 34px;
+    max-width: 36em;
+    font-size: 18.5px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+  .story-follow strong { color: var(--ink); font-weight: 600; }
+
+  /* ── SECTION HEADINGS: left-aligned editorial ── */
+  .sec-head { margin-bottom: 56px; max-width: 720px; }
+  .sec-head h2 {
     font-family: var(--serif);
     font-weight: 600;
-    font-size: clamp(32px, 4vw, 52px);
+    font-size: clamp(34px, 4.2vw, 56px);
     color: var(--navy);
-    line-height: 1.06;
+    line-height: 1.04;
     letter-spacing: -.022em;
-    margin-top: 14px;
   }
-  .section-head p {
+  .sec-head p {
     font-size: 18px;
     color: var(--muted);
     margin-top: 16px;
     line-height: 1.6;
+    max-width: 34em;
   }
 
-  /* ── SERVICES: mosaic grid ── */
-  .svc-grid {
+  /* ── SERVICES: editorial index ── */
+  .svc-section { padding: 0 0 120px; }
+  .svc-list { border-top: 1.5px solid var(--navy); }
+  .svc-row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
+    grid-template-columns: 90px 1.1fr 1.5fr auto;
+    gap: 36px;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid var(--border);
+    transition: background .2s, padding .2s;
   }
-  .svc-card {
-    background: var(--paper);
-    padding: 40px 34px;
-    transition: background .2s;
-  }
-  .svc-card:hover { background: #fefbf5; }
-  /* Letter-mark icon: Cormorant italic in gold */
+  .svc-row:hover { background: rgba(255,255,255,.6); }
   .svc-mark {
     font-family: var(--serif);
     font-style: italic;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 32px;
     color: var(--gold);
     line-height: 1;
-    margin-bottom: 18px;
-    display: block;
   }
   .svc-title {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 19px;
     color: var(--navy);
-    margin-bottom: 10px;
-    line-height: 1.2;
+    line-height: 1.25;
   }
-  .svc-body { font-size: 14.5px; color: var(--muted); line-height: 1.6; }
-  .svc-link {
-    display: inline-block;
-    margin-top: 20px;
-    font-size: 11.5px;
-    font-weight: 700;
-    letter-spacing: .1em;
-    text-transform: uppercase;
+  .svc-body { font-size: 15px; color: var(--muted); line-height: 1.55; }
+  .svc-arrow {
+    font-family: var(--serif);
+    font-size: 24px;
     color: var(--gold-d);
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: all .22s;
   }
-  .svc-link:hover { color: var(--navy); }
+  .svc-row:hover .svc-arrow { opacity: 1; transform: translateX(0); }
 
   /* ── ABOUT ── */
-  .about-section { background: var(--cream-d); }
+  .about-section { background: var(--cream-d); padding: 120px 0; }
   .about-grid {
     display: grid;
     grid-template-columns: .85fr 1.15fr;
@@ -391,40 +360,29 @@
     object-position: center top;
     border-radius: 4px;
   }
-  /* Caption nameplate replaces the floating stat card */
   .about-nameplate {
     margin-top: 16px;
     padding-top: 16px;
     border-top: 1.5px solid var(--border);
   }
-  .an-name {
-    font-weight: 700;
-    font-size: 15px;
-    color: var(--navy);
-  }
-  .an-cred {
-    font-size: 13px;
-    color: var(--muted);
-    margin-top: 3px;
-  }
+  .an-name { font-weight: 700; font-size: 15px; color: var(--navy); }
+  .an-cred { font-size: 13px; color: var(--muted); margin-top: 3px; }
   .about-content h2 {
     font-family: var(--serif);
     font-weight: 600;
-    font-size: clamp(30px, 3.6vw, 46px);
+    font-size: clamp(32px, 3.8vw, 50px);
     color: var(--navy);
-    line-height: 1.06;
+    line-height: 1.05;
     letter-spacing: -.02em;
-    margin-top: 14px;
   }
   .about-content > p {
     font-size: 17px;
     color: #3c4e5c;
-    margin-top: 22px;
+    margin-top: 24px;
     line-height: 1.7;
   }
-  .check-list { display: grid; gap: 12px; margin-top: 28px; }
+  .check-list { display: grid; gap: 12px; margin-top: 30px; }
   .check-item { display: flex; gap: 14px; align-items: flex-start; }
-  /* CSS-only checkmark circle — no emoji */
   .check-dot {
     flex: none;
     width: 22px;
@@ -448,17 +406,26 @@
   }
   .check-text { font-size: 15.5px; color: var(--ink); font-weight: 500; line-height: 1.5; }
 
-  /* ── PROCESS: large faint Cormorant numerals ── */
+  /* ── PROCESS: connected journey ── */
+  .process-section { padding: 120px 0; }
   .process-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    margin-top: 72px;
+    gap: 56px;
+    margin-top: 8px;
+    position: relative;
   }
-  .process-step { padding: 0 48px; text-align: center; }
-  .process-step:first-child { padding-left: 0; }
-  .process-step:last-child  { padding-right: 0; }
-  /* Large faint numeral: big typographic structure, not decorative box */
+  .process-grid::before {
+    content: "";
+    position: absolute;
+    top: 42px;
+    left: 8%;
+    right: 8%;
+    height: 1px;
+    background: var(--border);
+    z-index: 0;
+  }
+  .process-step { position: relative; z-index: 1; }
   .step-num {
     font-family: var(--serif);
     font-weight: 400;
@@ -466,9 +433,12 @@
     color: var(--navy);
     opacity: .14;
     line-height: 1;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     display: block;
     letter-spacing: -.04em;
+    background: var(--cream);
+    width: fit-content;
+    padding-right: 20px;
   }
   .step-title {
     font-weight: 700;
@@ -477,52 +447,59 @@
     margin-bottom: 10px;
     line-height: 1.2;
   }
-  .step-body { font-size: 15px; color: var(--muted); line-height: 1.6; }
+  .step-body { font-size: 15px; color: var(--muted); line-height: 1.6; max-width: 24em; }
 
-  /* ── TESTIMONIALS: dark navy, Cormorant italic quotes ── */
-  .testi-section { background: var(--navy-d); }
-  .testi-section .section-head h2 { color: #fff; }
-  .testi-section .section-head p  { color: #88a8c2; }
-  .testi-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-  .testi-card {
-    background: rgba(255,255,255,.055);
-    border: 1px solid rgba(255,255,255,.1);
-    border-radius: 6px;
-    padding: 36px 32px;
-  }
-  /* Large opening quote mark — Cormorant, gold, no star emojis */
-  .testi-qmark {
+  /* ── FEATURED QUOTE ── */
+  .quote-section { background: var(--navy-d); padding: 130px 0; }
+  .quote-inner { max-width: 880px; margin: 0 auto; text-align: center; }
+  .quote-mark {
     font-family: var(--serif);
     font-style: italic;
     font-weight: 600;
-    font-size: 72px;
-    line-height: .65;
+    font-size: 110px;
+    line-height: .4;
     color: var(--gold);
     opacity: .55;
     display: block;
-    margin-bottom: 18px;
+    margin-bottom: 38px;
   }
-  .testi-text {
+  .quote-text {
     font-family: var(--serif);
     font-style: italic;
-    font-size: 18.5px;
-    color: #dce9f2;
-    line-height: 1.6;
-    margin-bottom: 26px;
+    font-weight: 500;
+    font-size: clamp(28px, 3.6vw, 44px);
+    color: #ecf3f8;
+    line-height: 1.3;
+    letter-spacing: -.01em;
   }
-  .testi-name { font-weight: 700; font-size: 14px; color: #fff; }
-  .testi-loc  { font-size: 12.5px; color: #88a8c2; margin-top: 2px; }
+  .quote-attr { margin-top: 36px; }
+  .quote-name { font-weight: 700; font-size: 15px; color: #fff; }
+  .quote-loc  { font-size: 13px; color: #88a8c2; margin-top: 3px; }
+  .quote-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    max-width: 880px;
+    margin: 88px auto 0;
+    padding-top: 64px;
+    border-top: 1px solid rgba(255,255,255,.12);
+  }
+  .qp-text {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 19px;
+    color: #c3d4e1;
+    line-height: 1.55;
+  }
+  .qp-attr { margin-top: 18px; font-size: 13px; color: #88a8c2; }
+  .qp-attr b { color: #fff; font-weight: 700; font-size: 14px; display: block; margin-bottom: 2px; }
 
   /* ── CTA ── */
-  .cta-section { padding: 104px 0; }
+  .cta-section { padding: 120px 0; }
   .cta-box {
     background: var(--navy);
     border-radius: 8px;
-    padding: 80px 72px;
+    padding: 84px 72px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -543,38 +520,20 @@
     border-radius: 50%;
     background: rgba(196,154,60,.07);
   }
-  .cta-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 11.5px;
-    font-weight: 700;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-    color: var(--gold-l);
-    position: relative;
-  }
-  .cta-eyebrow::before {
-    content: "";
-    width: 22px; height: 1.5px;
-    background: var(--gold-l);
-    flex: none; display: block;
-  }
   .cta-box h2 {
     font-family: var(--serif);
     font-weight: 600;
-    font-size: clamp(34px, 4.4vw, 56px);
+    font-size: clamp(34px, 4.4vw, 58px);
     color: #fff;
-    line-height: 1.06;
+    line-height: 1.05;
     letter-spacing: -.022em;
-    margin: 18px 0;
     position: relative;
   }
   .cta-box > p {
     font-size: 18px;
     color: #88a8c2;
-    max-width: 38em;
-    margin: 0 auto 36px;
+    max-width: 36em;
+    margin: 20px auto 38px;
     line-height: 1.6;
     position: relative;
   }
@@ -615,24 +574,27 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 1020px) {
-    .hero-grid         { grid-template-columns: 1fr; }
-    .hero-photo        { max-width: 420px; order: -1; }
-    .about-grid        { grid-template-columns: 1fr; }
-    .about-photo-wrap  { max-width: 380px; }
-    .svc-grid          { grid-template-columns: repeat(2,1fr); }
-    .testi-grid        { grid-template-columns: 1fr; }
-    .process-grid      { grid-template-columns: 1fr; gap: 48px; }
-    .process-step      { padding: 0 !important; text-align: left; }
+    .hero-grid        { grid-template-columns: 1fr; }
+    .hero-photo       { max-width: 420px; order: -1; }
+    .about-grid       { grid-template-columns: 1fr; }
+    .about-photo-wrap { max-width: 380px; }
+    .svc-row          { grid-template-columns: 64px 1fr; gap: 8px 24px; align-items: start; }
+    .svc-mark         { grid-row: span 2; }
+    .svc-body         { grid-column: 2; }
+    .svc-arrow        { display: none; }
+    .process-grid     { grid-template-columns: 1fr; gap: 48px; }
+    .process-grid::before { display: none; }
+    .quote-pair       { grid-template-columns: 1fr; gap: 40px; }
     .nav-links, .nav-phone { display: none; }
-    .foot-grid         { grid-template-columns: 1fr 1fr; }
+    .foot-grid        { grid-template-columns: 1fr 1fr; }
+    .cred-row         { gap: 44px; }
   }
   @media (max-width: 640px) {
-    .wrap     { padding: 0 24px; }
-    .svc-grid { grid-template-columns: 1fr; }
-    .cta-box  { padding: 52px 28px; }
+    .wrap      { padding: 0 24px; }
+    .cta-box   { padding: 52px 28px; }
     .foot-grid { grid-template-columns: 1fr; }
-    .hero-stats { gap: 20px; }
-    .hero { padding: 60px 0 72px; }
+    .hero      { padding: 60px 0 72px; }
+    .story     { padding: 88px 0 80px; }
   }
 </style>
 </head>
@@ -676,26 +638,12 @@
           Expert orthopedic care,<br>
           <span class="hl">close to home.</span>
         </h1>
-        <p class="hero-body">Dr. Jeffrey R. Sonntag helps people across Northern Indiana move without pain — combining honest guidance with the latest in surgical and non-surgical orthopedic care.</p>
+        <p class="hero-body">Honest guidance and modern orthopedic care for Northern Indiana — surgical and not.</p>
         <div class="hero-actions">
           <a href="#contact" class="btn btn-gold">Book an Appointment</a>
-          <a href="#about" class="btn btn-outline">Meet Dr. Sonntag</a>
+          <a href="#about" class="text-link">Meet Dr. Sonntag</a>
         </div>
-        <div class="hero-divider"></div>
-        <div class="hero-stats">
-          <div>
-            <div class="stat-val">4.9 / 5</div>
-            <div class="stat-lbl">Patient rating*</div>
-          </div>
-          <div>
-            <div class="stat-val">Most insurance</div>
-            <div class="stat-lbl">Accepted &amp; verified</div>
-          </div>
-          <div>
-            <div class="stat-val">Same-week</div>
-            <div class="stat-lbl">Often available</div>
-          </div>
-        </div>
+        <p class="hero-quiet">Most insurance accepted <span>·</span> Same-week visits often available</p>
       </div>
       <div class="hero-photo">
         <div class="photo-frame">
@@ -706,71 +654,107 @@
   </div>
 </section>
 
-<!-- CREDENTIAL BAR -->
+<!-- AFFILIATIONS: centered placeholder logos -->
 <div class="cred-bar">
   <div class="wrap">
-    <span class="cred-label">Affiliated with</span>
-    <div class="cred-sep"></div>
-    <div class="cred-list">
-      <span class="cred-item">OSMC</span>
-      <span class="cred-item">Mishawaka Fieldhouse</span>
-      <span class="cred-item">M2 Performance</span>
-      <span class="cred-item">AAOS</span>
+    <div class="cred-row">
+      <!-- OSMC: cross-in-circle mark + wordmark -->
+      <span class="cred-logo" title="OSMC">
+        <svg viewBox="0 0 150 40" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <circle cx="20" cy="20" r="14" stroke="#163a5f" stroke-width="2.5"/>
+          <path d="M20 12v16M12 20h16" stroke="#163a5f" stroke-width="2.5" stroke-linecap="round"/>
+          <text x="44" y="26" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="19" fill="#163a5f" letter-spacing="1">OSMC</text>
+        </svg>
+      </span>
+      <!-- Mishawaka Fieldhouse: roofline mark -->
+      <span class="cred-logo" title="Mishawaka Fieldhouse">
+        <svg viewBox="0 0 232 40" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <path d="M6 26 20 12l14 14" stroke="#163a5f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 26h16v6H12z" stroke="#163a5f" stroke-width="2"/>
+          <text x="46" y="19" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="13" fill="#163a5f" letter-spacing="1.5">MISHAWAKA</text>
+          <text x="46" y="33" font-family="Bricolage Grotesque, sans-serif" font-weight="600" font-size="12" fill="#163a5f" letter-spacing="3">FIELDHOUSE</text>
+        </svg>
+      </span>
+      <!-- M2 Performance: bold monogram -->
+      <span class="cred-logo" title="M2 Performance">
+        <svg viewBox="0 0 210 40" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <rect x="4" y="6" width="28" height="28" rx="6" stroke="#163a5f" stroke-width="2.5"/>
+          <text x="10" y="27" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="15" fill="#163a5f">M2</text>
+          <text x="44" y="26" font-family="Bricolage Grotesque, sans-serif" font-weight="700" font-size="14" fill="#163a5f" letter-spacing="2.5">PERFORMANCE</text>
+        </svg>
+      </span>
+      <!-- AAOS: shield mark -->
+      <span class="cred-logo" title="AAOS">
+        <svg viewBox="0 0 132 40" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <path d="M20 5l13 5v9c0 8-5.5 13.5-13 16-7.5-2.5-13-8-13-16v-9l13-5z" stroke="#163a5f" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M14 20l4 4 8-8" stroke="#163a5f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="44" y="26" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="19" fill="#163a5f" letter-spacing="1.5">AAOS</text>
+        </svg>
+      </span>
     </div>
   </div>
 </div>
 
-<!-- SERVICES -->
-<section class="section" id="services">
+<!-- STORY CHAPTER: the stakes -->
+<section class="story">
   <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">How we help</span>
-      <h2>Care for every joint, every age, every goal.</h2>
-      <p>From sports injuries to joint replacement, Dr. Sonntag offers a full range of orthopedic care tailored to your life.</p>
+    <div class="story-inner">
+      <p class="story-lead">Pain has a way of shrinking your life. The stairs you avoid. The run you gave up. <em>The version of yourself you miss.</em></p>
+      <p class="story-follow">Dr. Sonntag's job is to give those things back — and it starts with a conversation, not a surgery date. <strong>Surgery is the last resort here, not the first.</strong> Most patients walk out with a plan that never involves an operating room.</p>
     </div>
-    <div class="svc-grid">
-      <div class="svc-card">
+  </div>
+</section>
+
+<!-- SERVICES: editorial index -->
+<section class="svc-section" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Wherever it hurts, start here.</h2>
+      <p>From sports injuries to joint replacement — a full range of orthopedic care, tailored to your life.</p>
+    </div>
+    <div class="svc-list">
+      <a class="svc-row" href="#">
         <span class="svc-mark">Kn</span>
-        <div class="svc-title">Knee &amp; Sports Injuries</div>
-        <p class="svc-body">ACL tears, meniscus, and cartilage care to get you back to the activities you love.</p>
-        <a href="#" class="svc-link">Learn more →</a>
-      </div>
-      <div class="svc-card">
+        <span class="svc-title">Knee &amp; Sports Injuries</span>
+        <span class="svc-body">ACL tears, meniscus, and cartilage care to get you back to the activities you love.</span>
+        <span class="svc-arrow">→</span>
+      </a>
+      <a class="svc-row" href="#">
         <span class="svc-mark">Hp</span>
-        <div class="svc-title">Hip &amp; Knee Replacement</div>
-        <p class="svc-body">Modern joint replacement designed for lasting relief and a faster, smoother recovery.</p>
-        <a href="#" class="svc-link">Learn more →</a>
-      </div>
-      <div class="svc-card">
+        <span class="svc-title">Hip &amp; Knee Replacement</span>
+        <span class="svc-body">Modern joint replacement designed for lasting relief and a faster, smoother recovery.</span>
+        <span class="svc-arrow">→</span>
+      </a>
+      <a class="svc-row" href="#">
         <span class="svc-mark">Sh</span>
-        <div class="svc-title">Shoulder &amp; Elbow</div>
-        <p class="svc-body">Rotator cuff, instability, and tendon repair to restore comfortable strength.</p>
-        <a href="#" class="svc-link">Learn more →</a>
-      </div>
-      <div class="svc-card">
+        <span class="svc-title">Shoulder &amp; Elbow</span>
+        <span class="svc-body">Rotator cuff, instability, and tendon repair to restore comfortable strength.</span>
+        <span class="svc-arrow">→</span>
+      </a>
+      <a class="svc-row" href="#">
         <span class="svc-mark">Fx</span>
-        <div class="svc-title">Fractures &amp; Trauma</div>
-        <p class="svc-body">Prompt, expert care for broken bones and acute injuries when you need it most.</p>
-        <a href="#" class="svc-link">Learn more →</a>
-      </div>
-      <div class="svc-card">
+        <span class="svc-title">Fractures &amp; Trauma</span>
+        <span class="svc-body">Prompt, expert care for broken bones and acute injuries when you need it most.</span>
+        <span class="svc-arrow">→</span>
+      </a>
+      <a class="svc-row" href="#">
         <span class="svc-mark">Rx</span>
-        <div class="svc-title">Non-Surgical Options</div>
-        <p class="svc-body">Injections, bracing, and therapy plans — because surgery is the last resort, not the first.</p>
-        <a href="#" class="svc-link">Learn more →</a>
-      </div>
-      <div class="svc-card">
+        <span class="svc-title">Non-Surgical Options</span>
+        <span class="svc-body">Injections, bracing, and therapy plans — because surgery is the last resort, not the first.</span>
+        <span class="svc-arrow">→</span>
+      </a>
+      <a class="svc-row" href="#">
         <span class="svc-mark">Mo</span>
-        <div class="svc-title">Return to Activity</div>
-        <p class="svc-body">Guided rehab and recovery support to help you get back to full, confident motion.</p>
-        <a href="#" class="svc-link">Learn more →</a>
-      </div>
+        <span class="svc-title">Return to Activity</span>
+        <span class="svc-body">Guided rehab and recovery support to help you get back to full, confident motion.</span>
+        <span class="svc-arrow">→</span>
+      </a>
     </div>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section class="section about-section" id="about">
+<section class="about-section" id="about">
   <div class="wrap">
     <div class="about-grid">
       <div class="about-photo-wrap">
@@ -781,7 +765,6 @@
         </div>
       </div>
       <div class="about-content">
-        <span class="eyebrow">About Dr. Sonntag</span>
         <h2>A doctor who listens first.</h2>
         <p>Dr. Jeffrey R. Sonntag is an orthopedic surgeon dedicated to treating each patient like a person, not a chart. He believes the best outcomes start with truly understanding your goals — then building a plan around them.</p>
         <div class="check-list">
@@ -809,10 +792,9 @@
 </section>
 
 <!-- PROCESS -->
-<section class="section" id="process">
+<section class="process-section" id="process">
   <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">What to expect</span>
+    <div class="sec-head">
       <h2>Your visit, made simple.</h2>
       <p>Getting care should feel easy. Here's how your journey with Dr. Sonntag works.</p>
     </div>
@@ -836,31 +818,25 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="section testi-section" id="reviews">
+<!-- FEATURED QUOTE -->
+<section class="quote-section" id="reviews">
   <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow eyebrow-light">Patient stories</span>
-      <h2>Loved by the people he treats.</h2>
+    <div class="quote-inner">
+      <span class="quote-mark">"</span>
+      <p class="quote-text">He took the time to actually explain my options. I never felt rushed — and my knee feels better than it has in years.</p>
+      <div class="quote-attr">
+        <div class="quote-name">Maria R.</div>
+        <div class="quote-loc">Elkhart, IN</div>
+      </div>
     </div>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <span class="testi-qmark">"</span>
-        <p class="testi-text">Dr. Sonntag took the time to actually explain my options. I never felt rushed, and my knee feels better than it has in years.</p>
-        <div class="testi-name">Maria R.</div>
-        <div class="testi-loc">Elkhart, IN</div>
+    <div class="quote-pair">
+      <div>
+        <p class="qp-text">"After my hip replacement I was walking comfortably within weeks. Kind, honest, and incredibly skilled."</p>
+        <div class="qp-attr"><b>David W.</b>Granger, IN</div>
       </div>
-      <div class="testi-card">
-        <span class="testi-qmark">"</span>
-        <p class="testi-text">After my hip replacement I was walking comfortably within weeks. Kind, honest, and incredibly skilled.</p>
-        <div class="testi-name">David W.</div>
-        <div class="testi-loc">Granger, IN</div>
-      </div>
-      <div class="testi-card">
-        <span class="testi-qmark">"</span>
-        <p class="testi-text">He fixed my shoulder and got me back to coaching. The whole team made me feel cared for from day one.</p>
-        <div class="testi-name">Sara P.</div>
-        <div class="testi-loc">Goshen, IN</div>
+      <div>
+        <p class="qp-text">"He fixed my shoulder and got me back to coaching. The whole team made me feel cared for from day one."</p>
+        <div class="qp-attr"><b>Sara P.</b>Goshen, IN</div>
       </div>
     </div>
   </div>
@@ -870,7 +846,6 @@
 <section class="cta-section" id="contact">
   <div class="wrap">
     <div class="cta-box">
-      <span class="cta-eyebrow">Let's get started</span>
       <h2>Ready to feel like yourself again?</h2>
       <p>Schedule a visit with Dr. Sonntag today. New patients are always welcome, and most major insurance plans are accepted.</p>
       <div class="cta-row">
