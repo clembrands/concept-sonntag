@@ -6,7 +6,7 @@
 <title>Dr. Sonntag — Homepage Concepts</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,800;1,6..96,500&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
   :root{
     --navy:#0e2741;--navy-d:#0a1c2f;--gold:#c2a04e;--gold-soft:#d9c389;
@@ -25,7 +25,7 @@
   .eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;font-weight:700;color:var(--gold)}
   header h1{font-family:var(--serif);font-weight:500;font-size:clamp(34px,4.6vw,58px);color:var(--navy);margin:14px 0 16px;line-height:1.05;letter-spacing:-.01em}
   header p{color:var(--mut);font-size:18px;max-width:34em;margin:0 auto}
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding:40px 0 80px}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;padding:40px 0 80px}
   .card{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;transition:.3s;display:flex;flex-direction:column}
   .card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -34px rgba(14,39,65,.5)}
   .thumb{height:230px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
@@ -50,6 +50,15 @@
   .t3 .h .u{background:#f7e9cb;border-radius:5px;padding:0 4px}
   .t3 .ph{flex:none;width:120px;height:120px;background:#163a5f;border-radius:46% 54% 48% 52%/52% 48% 52% 48%;padding:8px}
   .t3 .ph img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:42% 50% 44% 48%/48% 44% 48% 44%}
+  /* thumb 4 - editorial */
+  .t4{background:#efe9dc;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:0 30px;position:relative;overflow:hidden}
+  .t4 .h{font-family:"Bodoni Moda",Georgia,serif;line-height:.78;letter-spacing:-.02em}
+  .t4 .h em{font-style:italic;font-weight:500;color:#a96f53;font-size:34px;display:block}
+  .t4 .h b{font-weight:800;color:#211d18;font-size:50px;display:block}
+  .t4 .bar{position:absolute;left:0;right:0;bottom:0;height:40px;background:#a96f53}
+  .t4 .seal{position:absolute;top:18px;right:18px;width:54px;height:54px;display:grid;place-items:center;color:#211d18}
+  .t4 .seal svg{position:absolute;inset:0;width:100%;height:100%}
+  .t4 .seal span{position:relative;z-index:2;font-family:"Mulish";font-weight:800;font-size:8px;letter-spacing:.04em;text-transform:uppercase;text-align:center;line-height:1.1}
   .body{padding:28px 28px 30px;flex:1;display:flex;flex-direction:column}
   .body h2{font-family:var(--serif);font-weight:500;font-size:25px;color:var(--navy);margin-bottom:8px}
   .body p{color:var(--mut);font-size:14.5px;line-height:1.55;flex:1}
@@ -62,13 +71,13 @@
 </style>
 </head>
 <body>
-  <div class="top">Concept Review · <b>Dr. Jeffrey R. Sonntag, DO</b> · Three Homepage Directions</div>
+  <div class="top">Concept Review · <b>Dr. Jeffrey R. Sonntag, DO</b> · Four Homepage Directions</div>
   <header>
     <div class="wrap">
       <div class="mk">JS</div>
       <div class="eyebrow">Personal Brand · Homepage</div>
-      <h1>Three directions to choose from.</h1>
-      <p>Each is a complete, scrollable homepage built on a modernized OSMC navy &amp; gold palette. Open any one to explore it full-size, then tell me which direction to refine.</p>
+      <h1>Four directions to choose from.</h1>
+      <p>Each is a complete, scrollable homepage exploring a different visual direction — three on a modernized OSMC navy &amp; gold palette, plus a bolder editorial take. Open any one to explore it full-size, then tell me which direction to refine.</p>
     </div>
   </header>
 
@@ -114,6 +123,24 @@
           <p>Warm, human, and approachable — patient-first and reassuring. Soft neutrals, rounded cards, and friendly clarity that lowers the barrier to booking.</p>
           <div class="meta"><span>Warm neutrals</span><span>Friendly</span><span>Patient-first</span></div>
           <span class="open">Open Concept 03 →</span>
+        </div>
+      </a>
+      <!-- 4 -->
+      <a class="card" href="Sonntag - 4 Editorial.html">
+        <div class="thumb t4">
+          <span class="badge">04 · Editorial</span>
+          <span class="seal" aria-hidden="true">
+            <svg viewBox="0 0 200 200"><polygon points="100.0,2.0 112.2,14.9 127.6,6.0 135.7,21.8 153.0,17.6 156.3,35.0 174.1,35.8 172.3,53.5 189.1,59.3 182.5,75.8 197.0,86.1 186.0,100.0 197.0,113.9 182.5,124.2 189.1,140.7 172.3,146.5 174.1,164.2 156.3,165.0 153.0,182.4 135.7,178.2 127.6,194.0 112.2,185.1 100.0,198.0 87.8,185.1 72.4,194.0 64.3,178.2 47.0,182.4 43.7,165.0 25.9,164.2 27.7,146.5 10.9,140.7 17.5,124.2 3.0,113.9 14.0,100.0 3.0,86.1 17.5,75.8 10.9,59.3 27.7,53.5 25.9,35.8 43.7,35.0 47.0,17.6 64.3,21.8 72.4,6.0 87.8,14.9" fill="#dcc06a"/></svg>
+            <span>Book</span>
+          </span>
+          <div class="h"><em>Jeffrey</em><b>Sonntag</b></div>
+          <div class="bar"></div>
+        </div>
+        <div class="body">
+          <h2>Editorial</h2>
+          <p>Bold and magazine-like — the name becomes the masthead. High-contrast display type, full-bleed color blocks, and a personal-brand voice that breaks the section-by-section mold.</p>
+          <div class="meta"><span>Display serif</span><span>Name-forward</span><span>Magazine</span></div>
+          <span class="open">Open Concept 04 →</span>
         </div>
       </a>
     </div>

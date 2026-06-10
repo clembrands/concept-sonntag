@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dr. Jeffrey R. Sonntag, DO — Orthopedic Surgery &amp; Sports Medicine</title>
+<meta name="description" content="Jeffrey Sonntag, DO — orthopedic surgeon and sports medicine specialist practicing at OSMC in Northern Indiana." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;0,6..96,900;1,6..96,400;1,6..96,500;1,6..96,600;1,6..96,700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ivory:#f4efe4;      /* lightest paper */
+    --sand:#ece4d4;       /* warm paper */
+    --sand-d:#e3d8c2;     /* deeper sand */
+    --sage:#c6c4b4;       /* stone block */
+    --sage-d:#b6b4a2;
+    --clay:#a96f53;       /* terracotta signature */
+    --clay-d:#8c5a41;
+    --gold:#dcc06a;       /* butter seal */
+    --gold-d:#c4a64d;
+    --ink:#211d18;        /* near-black */
+    --ink-2:#36302a;
+    --mut:#736a5c;        /* muted brown */
+    --line:rgba(33,29,24,.16);
+    --display:"Bodoni Moda",Georgia,serif;
+    --sans:"Hanken Grotesk",system-ui,sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--sans);
+    background:var(--sand);
+    color:var(--ink);
+    line-height:1.6;
+    font-size:16.5px;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--clay);color:var(--ivory)}
+  .wrap{max-width:1320px;margin:0 auto;padding:0 40px}
+
+  /* shared utility type */
+  .kicker{
+    font-family:var(--sans);
+    font-size:11.5px;
+    font-weight:700;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--mut);
+  }
+  .pill{
+    display:inline-flex;align-items:center;
+    font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ink);border:1.4px solid var(--ink);
+    padding:8px 18px;border-radius:40px;
+  }
+  .arrow-link{
+    display:inline-flex;align-items:center;gap:9px;
+    font-weight:700;font-size:13.5px;letter-spacing:.04em;text-transform:uppercase;
+    border-bottom:1.6px solid currentColor;padding-bottom:3px;
+    transition:gap .25s ease;
+  }
+  .arrow-link:hover{gap:15px}
+
+  /* ── HEADER ── */
+  header{
+    position:sticky;top:0;z-index:60;
+    background:rgba(244,239,228,.86);
+    backdrop-filter:saturate(140%) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:13px}
+  .brand .seal{
+    width:34px;height:34px;border-radius:50%;
+    border:1.4px solid var(--ink);position:relative;
+    display:grid;place-items:center;
+    font-family:var(--display);font-weight:600;font-size:13px;
+  }
+  .brand .seal::after{content:"";position:absolute;inset:3px;border-radius:50%;border:1px solid var(--clay)}
+  .brand b{font-family:var(--sans);font-weight:800;letter-spacing:.18em;font-size:14px;text-transform:uppercase}
+  .nav-right{display:flex;align-items:center;gap:30px}
+  .nav-right a{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+  .nav-right a.book{
+    background:var(--ink);color:var(--ivory);
+    padding:11px 22px;border-radius:40px;letter-spacing:.08em;
+    transition:background .2s;
+  }
+  .nav-right a.book:hover{background:var(--clay)}
+  .nav-toggle{display:none}
+
+  /* ── HERO MASTHEAD ── */
+  .hero{padding:54px 0 0}
+  .hero-tags{display:flex;justify-content:center;gap:12px;margin-bottom:30px}
+  .masthead{
+    font-family:var(--display);
+    color:var(--ink);
+    text-align:center;
+    line-height:.84;
+    letter-spacing:-.02em;
+    font-size:clamp(58px,13.5vw,210px);
+    font-weight:800;
+    margin-bottom:6px;
+  }
+  .masthead .given{
+    font-style:italic;font-weight:500;
+    color:var(--clay);
+    font-size:.92em;
+    margin-right:.06em;
+  }
+  .masthead .md{font-weight:500;color:var(--mut)}
+
+  /* composition strip under the name */
+  .stage{
+    display:grid;
+    grid-template-columns:1.06fr 1.2fr;
+    margin-top:30px;
+    border-top:1px solid var(--line);
+  }
+  .stage-photo{
+    position:relative;
+    min-height:440px;
+    background:var(--sand-d);
+    overflow:hidden;
+  }
+  .stage-photo img{
+    width:100%;height:100%;position:absolute;inset:0;
+    object-fit:cover;object-position:50% 22%;
+    filter:grayscale(.12) contrast(1.02);
+  }
+  .stage-info{
+    background:var(--sage);
+    padding:54px 56px 46px;
+    display:flex;flex-direction:column;
+    position:relative;
+  }
+  .stage-info{padding-top:72px}
+  .stage-info .bio{
+    font-size:16px;line-height:1.66;color:var(--ink-2);
+    max-width:23em;
+  }
+  .stage-info .bio strong{font-weight:700}
+  .stage-cta{margin-top:auto;padding-top:40px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+  .rating{line-height:1.1}
+  .rating .num{font-family:var(--display);font-size:54px;font-weight:600;letter-spacing:-.01em}
+  .rating .lbl{font-size:12.5px;color:var(--ink-2);margin-top:4px}
+  .rating .lbl u{text-decoration-color:var(--clay);text-underline-offset:3px}
+
+  /* sunburst seal */
+  .seal-cta{
+    position:absolute;top:-46px;right:48px;z-index:5;
+    width:148px;height:148px;
+    display:grid;place-items:center;
+    color:var(--ink);
+    transition:transform .5s cubic-bezier(.2,.8,.2,1);
+  }
+  .seal-cta:hover{transform:rotate(28deg)}
+  .seal-cta svg{position:absolute;inset:0;width:100%;height:100%}
+  .seal-cta .seal-txt{
+    position:relative;z-index:2;text-align:center;
+    font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+    line-height:1.25;
+  }
+  .seal-cta .seal-txt span{display:block;font-size:18px;margin-top:5px}
+  @media(prefers-reduced-motion:reduce){.seal-cta{transition:none}.seal-cta:hover{transform:none}}
+
+  /* ── MANIFESTO (clay full bleed) ── */
+  .manifesto{
+    background:var(--clay);
+    color:var(--ivory);
+    padding:104px 0;
+    margin-top:0;
+  }
+  .manifesto .wrap{max-width:1100px}
+  .manifesto .kicker{color:rgba(244,239,228,.66)}
+  .manifesto blockquote{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:clamp(28px,4vw,52px);
+    line-height:1.16;
+    letter-spacing:-.012em;
+    margin:26px 0 0;
+    max-width:18em;
+  }
+  .manifesto blockquote em{font-style:italic;color:var(--gold)}
+  .manifesto .sig{
+    display:flex;align-items:center;gap:18px;
+    margin-top:50px;padding-top:26px;
+    border-top:1px solid rgba(244,239,228,.26);
+    max-width:560px;
+  }
+  .manifesto .sig .nm{font-family:var(--display);font-style:italic;font-size:26px}
+  .manifesto .sig .meta{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,228,.7)}
+
+  /* ── STATS ── */
+  .stats{padding:88px 0;background:var(--ivory)}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+  .stat{padding:0 34px;border-left:1px solid var(--line)}
+  .stat:first-child{padding-left:0;border-left:none}
+  .stat .n{font-family:var(--display);font-weight:600;font-size:clamp(46px,5vw,76px);line-height:.96;letter-spacing:-.02em}
+  .stat .n sup{font-size:.4em;font-weight:600;top:-1.1em;color:var(--clay)}
+  .stat .d{font-size:13.5px;color:var(--mut);margin-top:14px;max-width:15em;line-height:1.5}
+
+  /* ── SECTION HEAD (split italic/roman) ── */
+  .splithead{
+    font-family:var(--display);
+    line-height:.9;letter-spacing:-.02em;
+    font-size:clamp(46px,7vw,104px);
+    font-weight:700;color:var(--ink);
+  }
+  .splithead em{display:block;font-style:italic;font-weight:500;color:var(--clay)}
+
+  /* ── TREATS (editorial index) ── */
+  .treats{padding:104px 0}
+  .treats-top{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:40px}
+  .treats-top p{max-width:26em;color:var(--mut);font-size:15.5px}
+  .index-row{
+    display:grid;
+    grid-template-columns:62px 1fr 2.1fr auto;
+    align-items:center;gap:28px;
+    padding:30px 8px;
+    border-top:1px solid var(--line);
+    transition:padding-left .3s ease,background .3s ease;
+  }
+  .index-row:last-child{border-bottom:1px solid var(--line)}
+  .index-row:hover{padding-left:24px;background:var(--ivory)}
+  .index-row .ix{font-family:var(--display);font-size:18px;color:var(--clay)}
+  .index-row .ti{font-family:var(--display);font-size:clamp(24px,2.7vw,34px);font-weight:600;letter-spacing:-.01em;line-height:1.04}
+  .index-row .de{color:var(--mut);font-size:15px;line-height:1.55}
+  .index-row .go{
+    width:44px;height:44px;border-radius:50%;border:1.4px solid var(--line);
+    display:grid;place-items:center;flex:none;
+    transition:.25s;opacity:.4;
+  }
+  .index-row:hover .go{opacity:1;background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+
+  /* ── REVIEWS ── */
+  .reviews{background:var(--ink);color:var(--ivory);padding:0;overflow:hidden}
+  .reviews-grid{display:grid;grid-template-columns:1fr 1fr}
+  .reviews-left{padding:96px 56px 80px;display:flex;flex-direction:column}
+  .reviews-left .splithead{color:var(--ivory)}
+  .reviews-left .splithead em{color:var(--gold)}
+  .quote{
+    font-family:var(--display);font-size:22px;line-height:1.5;font-weight:400;
+    margin:48px 0 30px;max-width:24em;color:#ece6da;
+  }
+  .reviewer{display:flex;align-items:center;gap:14px;margin-top:auto}
+  .reviewer .av{
+    width:50px;height:50px;border-radius:50%;flex:none;
+    background:var(--clay);display:grid;place-items:center;
+    font-family:var(--display);font-style:italic;font-size:20px;color:var(--ivory);
+  }
+  .reviewer .who{font-weight:700;font-size:14.5px}
+  .reviewer .who span{display:block;font-weight:400;color:rgba(236,230,218,.6);font-size:12.5px;letter-spacing:.04em}
+  .rev-nav{display:flex;gap:12px;margin-top:34px}
+  .rev-nav button{
+    width:54px;height:46px;border-radius:40px;cursor:pointer;
+    background:transparent;border:1.4px solid rgba(236,230,218,.34);color:var(--ivory);
+    display:grid;place-items:center;transition:.2s;
+  }
+  .rev-nav button:hover{background:var(--ivory);color:var(--ink);border-color:var(--ivory)}
+  .reviews-right{background:var(--clay);position:relative;min-height:520px;overflow:hidden}
+  .reviews-right .label{
+    position:absolute;top:0;left:0;right:0;z-index:3;
+    text-align:center;padding:30px 20px;
+    font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,239,228,.82);
+  }
+  .reviews-right .ph{
+    position:absolute;inset:78px 64px 96px;
+    background:var(--sage);overflow:hidden;
+  }
+  .reviews-right .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;filter:grayscale(.1)}
+  .reviews-right .play{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;
+    width:60px;height:60px;border-radius:50%;background:rgba(244,239,228,.92);
+    display:grid;place-items:center;
+  }
+  .reviews-right .foot{
+    position:absolute;left:0;right:0;bottom:0;z-index:3;
+    text-align:center;padding:0 20px 30px;
+    font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,239,228,.7);line-height:1.8;
+  }
+
+  /* ── CTA ── */
+  .cta{padding:120px 0 110px;text-align:center;background:var(--sand)}
+  .cta .splithead{font-size:clamp(52px,9vw,150px)}
+  .cta p{max-width:30em;margin:30px auto 0;color:var(--mut);font-size:17px}
+  .cta-actions{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:42px}
+  .btn-solid{
+    background:var(--ink);color:var(--ivory);
+    font-weight:700;font-size:14.5px;letter-spacing:.05em;
+    padding:18px 36px;border-radius:44px;transition:.2s;
+    display:inline-flex;align-items:center;gap:10px;
+  }
+  .btn-solid:hover{background:var(--clay)}
+  .btn-line{
+    border:1.5px solid var(--ink);color:var(--ink);
+    font-weight:700;font-size:14.5px;letter-spacing:.05em;
+    padding:18px 34px;border-radius:44px;transition:.2s;
+    display:inline-flex;align-items:center;gap:10px;
+  }
+  .btn-line:hover{background:var(--ink);color:var(--ivory)}
+  .cta .loc{margin-top:38px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+  .cta .loc b{color:var(--ink);font-weight:700}
+
+  /* ── FOOTER ── */
+  footer{background:var(--ink);color:rgba(236,230,218,.72);padding:64px 0 40px}
+  .foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;padding-bottom:46px;border-bottom:1px solid rgba(236,230,218,.16)}
+  .foot-name{font-family:var(--display);font-size:34px;color:var(--ivory);line-height:1}
+  .foot-name em{font-style:italic;color:var(--gold)}
+  .foot-cols{display:flex;gap:64px;flex-wrap:wrap}
+  .foot-cols h5{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(236,230,218,.5);margin-bottom:16px;font-weight:700}
+  .foot-cols a{display:block;font-size:14.5px;color:rgba(236,230,218,.82);padding:5px 0;transition:color .2s}
+  .foot-cols a:hover{color:var(--gold)}
+  .foot-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:26px;font-size:12.5px;color:rgba(236,230,218,.5)}
+
+  /* focus visibility */
+  a:focus-visible,button:focus-visible{outline:2.5px solid var(--clay);outline-offset:3px;border-radius:2px}
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:1000px){
+    .stage{grid-template-columns:1fr}
+    .stage-photo{min-height:380px;order:-1}
+    .seal-cta{top:auto;bottom:-40px;right:28px;width:120px;height:120px}
+    .stats-grid{grid-template-columns:1fr 1fr;gap:40px 0}
+    .stat{padding:0 28px}
+    .stat:nth-child(3){border-left:none;padding-left:0}
+    .reviews-grid{grid-template-columns:1fr}
+    .reviews-right{min-height:420px}
+    .index-row{grid-template-columns:40px 1fr;gap:6px 18px}
+    .index-row .de{grid-column:2;margin-top:6px}
+    .index-row .go{display:none}
+  }
+  @media(max-width:780px){
+    .masthead{font-size:clamp(46px,13.5vw,96px);line-height:.9}
+    .masthead .given{display:block;margin-right:0}
+    .masthead .md{font-size:.8em}
+  }
+  @media(max-width:680px){
+    .wrap{padding:0 22px}
+    .nav-right a:not(.book){display:none}
+    .hero-tags{flex-direction:column;align-items:center;gap:10px}
+    .stage-info{padding:40px 26px 36px}
+    .stage-cta{flex-direction:column;align-items:flex-start;gap:30px}
+    .manifesto{padding:74px 0}
+    .stats{padding:60px 0}
+    .stats-grid{grid-template-columns:1fr}
+    .stat{padding:24px 0;border-left:none;border-top:1px solid var(--line)}
+    .stat:first-child{border-top:none}
+    .treats,.cta{padding:70px 0}
+    .reviews-left{padding:64px 26px}
+    .foot-top{flex-direction:column}
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand" href="#top" aria-label="Dr. Jeffrey R. Sonntag, DO — home">
+        <span class="seal" aria-hidden="true">JS</span>
+        <b>Sonntag</b>
+      </a>
+      <nav class="nav-right" aria-label="Primary">
+        <a href="#approach">Approach</a>
+        <a href="#treats">What I Treat</a>
+        <a href="#reviews">Patients</a>
+        <a href="#book" class="book">Book a Visit</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- ── HERO MASTHEAD ── -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-tags">
+      <span class="pill">Orthopedic Surgery</span>
+      <span class="pill">Sports Medicine</span>
+    </div>
+    <h1 class="masthead"><span class="given">Jeffrey</span>Sonntag,&nbsp;<span class="md">DO</span></h1>
+
+    <div class="stage">
+      <div class="stage-photo">
+        <img src="assets/sonntag-headshot.png" alt="Dr. Jeffrey R. Sonntag, DO, orthopedic surgeon" />
+      </div>
+      <div class="stage-info">
+        <a href="#book" class="seal-cta" aria-label="Schedule an appointment">
+          <svg viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+            <polygon points="100.0,2.0 112.2,14.9 127.6,6.0 135.7,21.8 153.0,17.6 156.3,35.0 174.1,35.8 172.3,53.5 189.1,59.3 182.5,75.8 197.0,86.1 186.0,100.0 197.0,113.9 182.5,124.2 189.1,140.7 172.3,146.5 174.1,164.2 156.3,165.0 153.0,182.4 135.7,178.2 127.6,194.0 112.2,185.1 100.0,198.0 87.8,185.1 72.4,194.0 64.3,178.2 47.0,182.4 43.7,165.0 25.9,164.2 27.7,146.5 10.9,140.7 17.5,124.2 3.0,113.9 14.0,100.0 3.0,86.1 17.5,75.8 10.9,59.3 27.7,53.5 25.9,35.8 43.7,35.0 47.0,17.6 64.3,21.8 72.4,6.0 87.8,14.9" fill="#dcc06a"/>
+          </svg>
+          <span class="seal-txt">Schedule a<br>Visit<span>↗</span></span>
+        </a>
+        <p class="bio">I'm an orthopedic surgeon and sports medicine specialist practicing at <strong>OSMC</strong> in Northern Indiana. For more than a decade I've helped athletes, working parents, and active adults get back to the lives they were sidelined from — with the most honest plan to get there, surgical or not.</p>
+        <div class="stage-cta">
+          <a href="#book" class="arrow-link">Meet Dr. Sonntag</a>
+          <div class="rating">
+            <div class="num">4.9</div>
+            <div class="lbl">Average rating on <u>healthgrades*</u></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MANIFESTO ── -->
+<section class="manifesto" id="approach">
+  <div class="wrap">
+    <span class="kicker">Dr. Sonntag — On His Approach</span>
+    <blockquote>An operation is one tool, not the goal. The goal is the <em>life you want back</em> — and most of the time, we get there without an OR.</blockquote>
+    <div class="sig">
+      <div>
+        <div class="nm">Jeffrey R. Sonntag, DO</div>
+        <div class="meta">Orthopedic Surgeon · OSMC · Northern Indiana</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS ── -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="n">12<sup>+</sup></div>
+        <div class="d">Years treating orthopedic &amp; sports injuries*</div>
+      </div>
+      <div class="stat">
+        <div class="n">90<sup>%</sup></div>
+        <div class="d">Of patients start with a non-surgical plan*</div>
+      </div>
+      <div class="stat">
+        <div class="n">2</div>
+        <div class="d">OSMC locations — Goshen &amp; Mishawaka, IN</div>
+      </div>
+      <div class="stat">
+        <div class="n">1k<sup>+</sup></div>
+        <div class="d">Athletes &amp; active adults back in motion*</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT I TREAT ── -->
+<section class="treats" id="treats">
+  <div class="wrap">
+    <div class="treats-top">
+      <h2 class="splithead">What I<em>Treat</em></h2>
+      <p>From the weekend injury to the joint that's worn out its welcome — a full range of orthopedic care, built around your goals.</p>
+    </div>
+
+    <div class="index">
+      <a href="#book" class="index-row">
+        <span class="ix">01</span>
+        <span class="ti">Sports Injuries</span>
+        <span class="de">ACL tears, meniscus, cartilage, and overuse injuries — getting you back to the field, the trail, or the game.</span>
+        <span class="go" aria-hidden="true">↗</span>
+      </a>
+      <a href="#book" class="index-row">
+        <span class="ix">02</span>
+        <span class="ti">Joint Replacement</span>
+        <span class="de">Hip and knee replacement when conservative care has run its course — modern technique, honest timing.</span>
+        <span class="go" aria-hidden="true">↗</span>
+      </a>
+      <a href="#book" class="index-row">
+        <span class="ix">03</span>
+        <span class="ti">Shoulder &amp; Elbow</span>
+        <span class="de">Rotator cuff, instability, and tendon repair — restoring the reach and strength you rely on.</span>
+        <span class="go" aria-hidden="true">↗</span>
+      </a>
+      <a href="#book" class="index-row">
+        <span class="ix">04</span>
+        <span class="ti">Fracture &amp; Trauma Care</span>
+        <span class="de">Prompt, expert treatment for broken bones and acute injuries — when you need an answer fast.</span>
+        <span class="go" aria-hidden="true">↗</span>
+      </a>
+      <a href="#book" class="index-row">
+        <span class="ix">05</span>
+        <span class="ti">Non-Surgical Orthopedics</span>
+        <span class="de">Injections, bracing, and guided rehab — the first line of care, and often the only line you'll need.</span>
+        <span class="go" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── REVIEWS ── -->
+<section class="reviews" id="reviews">
+  <div class="reviews-grid">
+    <div class="reviews-left">
+      <h2 class="splithead">Patients<em>Reviews</em></h2>
+      <p class="quote">"He fixed my shoulder and got me back to coaching. Dr. Sonntag listened, never rushed me toward surgery, and walked me through every option until I understood it."</p>
+      <div class="reviewer">
+        <span class="av" aria-hidden="true">A</span>
+        <div class="who">Alice R.<span>on healthgrades*</span></div>
+      </div>
+      <div class="rev-nav">
+        <button type="button" aria-label="Previous review">←</button>
+        <button type="button" aria-label="Next review">→</button>
+      </div>
+    </div>
+    <div class="reviews-right">
+      <div class="label">Dr. Sonntag — In His Patients' Words</div>
+      <div class="ph"><img src="assets/sonntag-headshot.png" alt="" /></div>
+      <span class="play" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 3.5v11l9-5.5-9-5.5Z" fill="#211d18"/></svg>
+      </span>
+      <div class="foot">Goshen &amp; Mishawaka, IN<br>Now welcoming new patients</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA / BOOK ── -->
+<section class="cta" id="book">
+  <div class="wrap">
+    <h2 class="splithead">Let's get you<em>moving.</em></h2>
+    <p>Tell me what you've been sidelined from. We'll find the most direct, honest path to getting it back — and I'll see you at OSMC.</p>
+    <div class="cta-actions">
+      <a href="#" class="btn-solid">Book a Visit at OSMC <span aria-hidden="true">↗</span></a>
+      <a href="#" class="btn-line">Call (574) 319-9697</a>
+    </div>
+    <div class="loc"><b>OSMC</b> · Goshen &amp; Mishawaka, Indiana · Most insurance accepted*</div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-name"><em>Jeffrey</em> Sonntag, DO</div>
+      <div class="foot-cols">
+        <div>
+          <h5>Care</h5>
+          <a href="#treats">Sports Injuries</a>
+          <a href="#treats">Joint Replacement</a>
+          <a href="#treats">Shoulder &amp; Elbow</a>
+          <a href="#treats">Non-Surgical Care</a>
+        </div>
+        <div>
+          <h5>Practice</h5>
+          <a href="#approach">Approach</a>
+          <a href="#reviews">Patients</a>
+          <a href="#book">Book a Visit</a>
+          <a href="#book">Contact</a>
+        </div>
+        <div>
+          <h5>Find Me</h5>
+          <a href="#book">OSMC — Goshen</a>
+          <a href="#book">OSMC — Mishawaka</a>
+          <a href="#book">(574) 319-9697</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Dr. Jeffrey R. Sonntag, DO. Practicing at OSMC.</span>
+      <span>Concept design — placeholder content marked with *</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
