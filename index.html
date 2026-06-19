@@ -6,7 +6,7 @@
 <title>Dr. Sonntag — Homepage Concepts</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Archivo:ital,wght@0,800;1,500&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Archivo:ital,wght@0,800;1,500&family=Plus+Jakarta+Sans:wght@700;800&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
   :root{
     --navy:#0e2741;--navy-d:#0a1c2f;--gold:#c2a04e;--gold-soft:#d9c389;
@@ -59,6 +59,21 @@
   .t4 .seal{position:absolute;top:18px;right:18px;width:54px;height:54px;display:grid;place-items:center;color:#0c2340}
   .t4 .seal svg{position:absolute;inset:0;width:100%;height:100%}
   .t4 .seal span{position:relative;z-index:2;font-family:"Mulish";font-weight:800;font-size:8px;letter-spacing:.04em;text-transform:uppercase;text-align:center;line-height:1.1}
+  /* thumb 5 - practice (feature) */
+  .t5{background:radial-gradient(135% 130% at 82% 0%,#27619f 0%,#0e2a48 47%,#0a1f37 100%);display:flex;align-items:center;position:relative;overflow:hidden;padding:0 36px}
+  .t5 .t5in{position:relative;z-index:2;max-width:56%}
+  .t5 .pill{display:inline-block;font-family:"Mulish";font-size:9.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#cfe0fb;border:1px solid rgba(255,255,255,.28);border-radius:30px;padding:5px 12px;margin-bottom:14px}
+  .t5 .h{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-weight:800;font-size:31px;line-height:1.03;letter-spacing:-.025em;color:#fff}
+  .t5 .h .b{color:#8fb4f7}
+  .t5 .ph{position:absolute;right:0;top:0;bottom:0;width:50%;overflow:hidden}
+  .t5 .ph::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#0e2a48 0%,rgba(14,42,72,.25) 45%,transparent 72%)}
+  .t5 .ph img{width:100%;height:100%;object-fit:cover;object-position:60% 16%;filter:saturate(.92) contrast(1.02)}
+  /* feature (full-width) card */
+  .card.feature{grid-column:1/-1;flex-direction:row;align-items:stretch}
+  .card.feature .thumb{flex:1.5;height:auto;min-height:340px;border-bottom:none;border-right:1px solid var(--line)}
+  .card.feature .body{flex:1;justify-content:center}
+  .ribbon{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#2f7ff0;margin-bottom:11px}
+  .ribbon::before{content:"";width:7px;height:7px;border-radius:50%;background:#2f7ff0}
   .body{padding:28px 28px 30px;flex:1;display:flex;flex-direction:column}
   .body h2{font-family:var(--serif);font-weight:500;font-size:25px;color:var(--navy);margin-bottom:8px}
   .body p{color:var(--mut);font-size:14.5px;line-height:1.55;flex:1}
@@ -67,17 +82,25 @@
   .open{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--navy);color:#fff;font-weight:700;font-size:14px;padding:13px 22px;border-radius:3px;transition:.2s}
   .open:hover{background:var(--gold);color:var(--navy-d)}
   .note{text-align:center;color:var(--mut);font-size:13.5px;padding:0 0 70px;max-width:46em;margin:0 auto;line-height:1.6}
-  @media(max-width:920px){.grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}.wrap{padding:0 24px}}
+  @media(max-width:920px){
+    .grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}
+    .wrap{padding:0 24px}
+    .card.feature{flex-direction:column}
+    .card.feature .thumb{flex:none;min-height:240px;border-right:none;border-bottom:1px solid var(--line)}
+    .t5 .t5in{max-width:62%}
+    .t5 .pill{display:none}
+    .t5 .h{font-size:23px}
+  }
 </style>
 </head>
 <body>
-  <div class="top">Concept Review · <b>Dr. Jeffrey R. Sonntag, DO</b> · Four Homepage Directions</div>
+  <div class="top">Concept Review · <b>Dr. Jeffrey R. Sonntag, DO</b> · Five Homepage Directions</div>
   <header>
     <div class="wrap">
       <div class="mk">JS</div>
       <div class="eyebrow">Personal Brand · Homepage</div>
-      <h1>Four directions to choose from.</h1>
-      <p>Each is a complete, scrollable homepage exploring a different visual direction. Concepts 3 and 4 use the Notre Dame navy &amp; gold palette. Open any one to explore it full-size, then tell me which direction to refine.</p>
+      <h1>Five directions to choose from.</h1>
+      <p>Each is a complete, scrollable homepage exploring a different visual direction. Concepts 3 and 4 use the Notre Dame navy &amp; gold palette; Concept 5 is built around the design direction you shared. Open any one to explore it full-size, then tell me which direction to refine.</p>
     </div>
   </header>
 
@@ -141,6 +164,24 @@
           <p>Bold and magazine-like — the name becomes the masthead. Modern grotesque type, full-bleed Notre Dame color blocks, and a personal-brand voice that breaks the section-by-section mold.</p>
           <div class="meta"><span>Modern sans</span><span>Name-forward</span><span>Magazine</span></div>
           <span class="open">Open Concept 04 →</span>
+        </div>
+      </a>
+      <!-- 5 -->
+      <a class="card feature" href="Sonntag - 5 Practice.html">
+        <div class="thumb t5">
+          <span class="badge">05 · Practice</span>
+          <div class="t5in">
+            <span class="pill">Now accepting new patients</span>
+            <div class="h">Expert orthopedic care that gets <span class="b">you back in motion.</span></div>
+          </div>
+          <div class="ph"><img src="assets/sonntag-headshot.png" alt="" /></div>
+        </div>
+        <div class="body">
+          <span class="ribbon">Based on your preferences</span>
+          <h2>Practice</h2>
+          <p>A polished, modern medical-practice site — confident navy &amp; blue, big bold sans headlines, a full-bleed hero portrait, and a clear booking path. Built around the design direction Dr. Sonntag shared.</p>
+          <div class="meta"><span>Navy &amp; blue</span><span>Modern practice</span><span>Booking-first</span></div>
+          <span class="open">Open Concept 05 →</span>
         </div>
       </a>
     </div>
