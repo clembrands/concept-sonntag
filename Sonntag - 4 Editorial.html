@@ -68,28 +68,28 @@
   /* ── HEADER ── */
   header{
     position:sticky;top:0;z-index:60;
-    background:rgba(244,239,228,.86);
+    background:var(--clay);
     backdrop-filter:saturate(140%) blur(10px);
-    border-bottom:1px solid var(--line);
+    border-bottom:1px solid rgba(201,151,0,.4);
   }
   .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
   .brand{display:flex;align-items:center;gap:13px}
   .brand .seal{
     width:34px;height:34px;border-radius:50%;
-    border:1.4px solid var(--ink);position:relative;
-    display:grid;place-items:center;
+    border:1.4px solid var(--ivory);position:relative;
+    display:grid;place-items:center;color:var(--ivory);
     font-family:var(--display);font-weight:600;font-size:13px;
   }
   .brand .seal::after{content:"";position:absolute;inset:3px;border-radius:50%;border:1px solid var(--gold)}
-  .brand b{font-family:var(--sans);font-weight:800;letter-spacing:.18em;font-size:14px;text-transform:uppercase}
+  .brand b{font-family:var(--sans);font-weight:800;letter-spacing:.18em;font-size:14px;text-transform:uppercase;color:var(--ivory)}
   .nav-right{display:flex;align-items:center;gap:30px}
-  .nav-right a{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+  .nav-right a{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ivory)}
   .nav-right a.book{
-    background:var(--ink);color:var(--ivory);
+    background:var(--gold);color:var(--clay);
     padding:11px 22px;border-radius:40px;letter-spacing:.08em;
     transition:background .2s;
   }
-  .nav-right a.book:hover{background:var(--clay)}
+  .nav-right a.book:hover{background:var(--ivory)}
   .nav-toggle{display:none}
 
   /* ── HERO MASTHEAD ── */
@@ -238,7 +238,7 @@
   .index-row:hover .go{opacity:1;background:var(--ink);color:var(--ivory);border-color:var(--ink)}
 
   /* ── REVIEWS ── */
-  .reviews{background:var(--ink);color:var(--ivory);padding:0;overflow:hidden}
+  .reviews{background:var(--clay);color:var(--ivory);padding:0;overflow:hidden}
   .reviews-grid{display:grid;grid-template-columns:1fr 1fr}
   .reviews-left{padding:96px 56px 80px;display:flex;flex-direction:column}
   .reviews-left .splithead{color:var(--ivory)}
@@ -250,8 +250,8 @@
   .reviewer{display:flex;align-items:center;gap:14px;margin-top:auto}
   .reviewer .av{
     width:50px;height:50px;border-radius:50%;flex:none;
-    background:var(--clay);display:grid;place-items:center;
-    font-family:var(--display);font-style:italic;font-size:20px;color:var(--ivory);
+    background:var(--gold);display:grid;place-items:center;
+    font-family:var(--display);font-style:italic;font-size:20px;color:var(--clay);
   }
   .reviewer .who{font-weight:700;font-size:14.5px}
   .reviewer .who span{display:block;font-weight:400;color:rgba(236,230,218,.6);font-size:12.5px;letter-spacing:.04em}
@@ -262,7 +262,7 @@
     display:grid;place-items:center;transition:.2s;
   }
   .rev-nav button:hover{background:var(--ivory);color:var(--ink);border-color:var(--ivory)}
-  .reviews-right{background:var(--clay);position:relative;min-height:520px;overflow:hidden}
+  .reviews-right{background:var(--clay);position:relative;min-height:520px;overflow:hidden;border-left:1px solid rgba(244,239,228,.12)}
   .reviews-right .label{
     position:absolute;top:0;left:0;right:0;z-index:3;
     text-align:center;padding:30px 20px;
@@ -307,7 +307,7 @@
   .cta .loc b{color:var(--ink);font-weight:700}
 
   /* ── FOOTER ── */
-  footer{background:var(--ink);color:rgba(236,230,218,.72);padding:64px 0 40px}
+  footer{background:var(--clay);color:rgba(236,230,218,.72);padding:64px 0 40px}
   .foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;padding-bottom:46px;border-bottom:1px solid rgba(236,230,218,.16)}
   .foot-name{font-family:var(--display);font-size:34px;color:var(--ivory);line-height:1}
   .foot-name em{font-style:italic;color:var(--gold)}
