@@ -10,19 +10,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500;1,600;1,700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --ivory:#f4efe4;      /* lightest paper */
-    --sand:#ece4d4;       /* warm paper */
-    --sand-d:#e3d8c2;     /* deeper sand */
-    --sage:#c6c4b4;       /* stone block */
-    --sage-d:#b6b4a2;
-    --clay:#a96f53;       /* terracotta signature */
-    --clay-d:#8c5a41;
-    --gold:#dcc06a;       /* butter seal */
-    --gold-d:#c4a64d;
-    --ink:#211d18;        /* near-black */
-    --ink-2:#36302a;
-    --mut:#736a5c;        /* muted brown */
-    --line:rgba(33,29,24,.16);
+    --ivory:#f5f1e6;      /* lightest paper */
+    --sand:#ece5d6;       /* warm paper */
+    --sand-d:#e1d7c2;     /* deeper sand */
+    --sage:#cdc7b7;       /* warm stone block */
+    --sage-d:#bdb7a7;
+    --clay:#0c2340;       /* ND navy — signature block + display */
+    --clay-d:#081a30;
+    --gold:#c99700;       /* ND gold — accent + seal */
+    --gold-d:#a87f00;
+    --ink:#15171c;        /* near-black */
+    --ink-2:#2c2f36;
+    --mut:#6c6a64;        /* muted */
+    --line:rgba(21,23,28,.16);
     --display:"Playfair Display",Georgia,serif;
     --sans:"Hanken Grotesk",system-ui,sans-serif;
   }
@@ -80,7 +80,7 @@
     display:grid;place-items:center;
     font-family:var(--display);font-weight:600;font-size:13px;
   }
-  .brand .seal::after{content:"";position:absolute;inset:3px;border-radius:50%;border:1px solid var(--clay)}
+  .brand .seal::after{content:"";position:absolute;inset:3px;border-radius:50%;border:1px solid var(--gold)}
   .brand b{font-family:var(--sans);font-weight:800;letter-spacing:.18em;font-size:14px;text-transform:uppercase}
   .nav-right{display:flex;align-items:center;gap:30px}
   .nav-right a{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
@@ -97,7 +97,7 @@
   .hero-tags{display:flex;justify-content:center;gap:12px;margin-bottom:30px}
   .masthead{
     font-family:var(--display);
-    color:var(--ink);
+    color:var(--clay);
     text-align:center;
     line-height:.84;
     letter-spacing:-.03em;
@@ -107,7 +107,7 @@
   }
   .masthead .given{
     font-style:italic;font-weight:500;
-    color:var(--clay);
+    color:var(--gold);
     font-size:.92em;
     margin-right:.06em;
   }
@@ -147,7 +147,7 @@
   .rating{line-height:1.1}
   .rating .num{font-family:var(--display);font-size:54px;font-weight:600;letter-spacing:-.01em}
   .rating .lbl{font-size:12.5px;color:var(--ink-2);margin-top:4px}
-  .rating .lbl u{text-decoration-color:var(--clay);text-underline-offset:3px}
+  .rating .lbl u{text-decoration-color:var(--gold);text-underline-offset:3px}
 
   /* sunburst seal */
   .seal-cta{
@@ -201,7 +201,7 @@
   .stat{padding:0 34px;border-left:1px solid var(--line)}
   .stat:first-child{padding-left:0;border-left:none}
   .stat .n{font-family:var(--display);font-weight:600;font-size:clamp(46px,5vw,76px);line-height:.96;letter-spacing:-.02em}
-  .stat .n sup{font-size:.4em;font-weight:600;top:-1.1em;color:var(--clay)}
+  .stat .n sup{font-size:.4em;font-weight:600;top:-1.1em;color:var(--gold)}
   .stat .d{font-size:13.5px;color:var(--mut);margin-top:14px;max-width:15em;line-height:1.5}
 
   /* ── SECTION HEAD (split italic/roman) ── */
@@ -209,9 +209,9 @@
     font-family:var(--display);
     line-height:.9;letter-spacing:-.02em;
     font-size:clamp(46px,7vw,104px);
-    font-weight:700;color:var(--ink);
+    font-weight:700;color:var(--clay);
   }
-  .splithead em{display:block;font-style:italic;font-weight:500;color:var(--clay)}
+  .splithead em{display:block;font-style:italic;font-weight:500;color:var(--gold)}
 
   /* ── TREATS (editorial index) ── */
   .treats{padding:104px 0}
@@ -227,7 +227,7 @@
   }
   .index-row:last-child{border-bottom:1px solid var(--line)}
   .index-row:hover{padding-left:24px;background:var(--ivory)}
-  .index-row .ix{font-family:var(--display);font-size:18px;color:var(--clay)}
+  .index-row .ix{font-family:var(--display);font-size:18px;color:var(--gold)}
   .index-row .ti{font-family:var(--display);font-size:clamp(24px,2.7vw,34px);font-weight:600;letter-spacing:-.01em;line-height:1.04}
   .index-row .de{color:var(--mut);font-size:15px;line-height:1.55}
   .index-row .go{
@@ -392,7 +392,7 @@
       <div class="stage-info">
         <a href="#book" class="seal-cta" aria-label="Schedule an appointment">
           <svg viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-            <polygon points="100.0,2.0 112.2,14.9 127.6,6.0 135.7,21.8 153.0,17.6 156.3,35.0 174.1,35.8 172.3,53.5 189.1,59.3 182.5,75.8 197.0,86.1 186.0,100.0 197.0,113.9 182.5,124.2 189.1,140.7 172.3,146.5 174.1,164.2 156.3,165.0 153.0,182.4 135.7,178.2 127.6,194.0 112.2,185.1 100.0,198.0 87.8,185.1 72.4,194.0 64.3,178.2 47.0,182.4 43.7,165.0 25.9,164.2 27.7,146.5 10.9,140.7 17.5,124.2 3.0,113.9 14.0,100.0 3.0,86.1 17.5,75.8 10.9,59.3 27.7,53.5 25.9,35.8 43.7,35.0 47.0,17.6 64.3,21.8 72.4,6.0 87.8,14.9" fill="#dcc06a"/>
+            <polygon points="100.0,2.0 112.2,14.9 127.6,6.0 135.7,21.8 153.0,17.6 156.3,35.0 174.1,35.8 172.3,53.5 189.1,59.3 182.5,75.8 197.0,86.1 186.0,100.0 197.0,113.9 182.5,124.2 189.1,140.7 172.3,146.5 174.1,164.2 156.3,165.0 153.0,182.4 135.7,178.2 127.6,194.0 112.2,185.1 100.0,198.0 87.8,185.1 72.4,194.0 64.3,178.2 47.0,182.4 43.7,165.0 25.9,164.2 27.7,146.5 10.9,140.7 17.5,124.2 3.0,113.9 14.0,100.0 3.0,86.1 17.5,75.8 10.9,59.3 27.7,53.5 25.9,35.8 43.7,35.0 47.0,17.6 64.3,21.8 72.4,6.0 87.8,14.9" fill="#c99700"/>
           </svg>
           <span class="seal-txt">Schedule a<br>Visit<span>↗</span></span>
         </a>
